@@ -108,3 +108,4 @@ local credits = create_component("TextLabel", {
 	BlurFX:Destroy()
 end
 run_loader()
+task.wait()
