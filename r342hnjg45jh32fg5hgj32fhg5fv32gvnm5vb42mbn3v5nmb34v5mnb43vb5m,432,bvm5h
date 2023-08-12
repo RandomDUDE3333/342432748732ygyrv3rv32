@@ -84,7 +84,7 @@ local credits = create_component("TextLabel", {
 	BackgroundTransparency = 1,
 	Size = UDim2.new(1, 0, .5, 0),
 	Font = Enum.Font.GothamSemibold,
-	TextSize = 45,
+	TextSize = 50,
 	TextColor3 = Color3.new(1,1,1),
 	TextStrokeTransparency = 1
 })
