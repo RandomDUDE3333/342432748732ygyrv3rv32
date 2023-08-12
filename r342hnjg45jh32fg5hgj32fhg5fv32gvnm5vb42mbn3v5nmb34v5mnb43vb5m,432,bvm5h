@@ -56,12 +56,7 @@ local function run_loader()
 	})
 
 local logo = create_component("ImageLabel", {
-	Parent = main_window,
-	BackgroundTransparency = 1,
-	BorderSizePixel = 0,
-	Image = "rbxassetid://9743046600",
-	ImageColor3 = Color3.new(1,1,1),
-	Size = UDim2.new(1, 0, 1, 0)
+	
 })
 
 local text = create_component("TextLabel", {
