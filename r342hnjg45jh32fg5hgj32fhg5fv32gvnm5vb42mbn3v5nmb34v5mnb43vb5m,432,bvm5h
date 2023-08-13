@@ -5,3 +5,40 @@ local camera = workspace.CurrentCamera
 content_provider:PreloadAsync({
 	"rbxassetid://9743046600"
 })
+
+local function create_component(class_name, properties)
+	local instance = Instance.new(class_name)
+
+	if (class_name == "ScreenGui" and syn and syn.protect_gui) then
+		syn.protect_gui(instance)
+	end
+
+	for key, value in next, properties do
+		pcall(function() instance[key] = value end)
+	end
+
+	return instance
+end
+
+local function create_tween(instance, seconds, goal)
+	local tween = game:GetService("TweenService"):Create(
+		instance,
+		TweenInfo.new(seconds,Enum.EasingStyle.Back),
+		goal
+	)
+
+	tween:Play()
+
+	return tween
+end
+
+pcall(function() coregui["Peace Loader GUI"]:Destroy() end)
+
+local gui = create_component("ScreenGui", {
+	Parent = coregui,
+	Name = "Peace Loader GUI"
+})
+
+local BlurFX = Instance.new("BlurEffect", camera)
+BlurFX.Enabled = true
+BlurFX.Size = 0
